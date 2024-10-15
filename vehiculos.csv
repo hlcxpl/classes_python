@@ -1,2 +1,0 @@
-"Marca toyota, Modelo corola, 4 ruedas, 300 Km/h, 2000 cc, Puestos: 5","{'marca': 'toyota', 'modelo': 'corola', 'nro_ruedas': '4', 'velocidad': '300', 'cilindrada': '2000', 'nro_puestos': '5'}"
-"Marca subaru, Modelo star, 4 ruedas, Tipo: Urbana","{'marca': 'subaru', 'modelo': 'star', 'nro_ruedas': '4', 'tipo': 'Urbana'}"
