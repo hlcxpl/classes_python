@@ -59,31 +59,40 @@ class Motocicleta(Bicicleta):
         return f"{super().__str__()}, Motor: {self.motor}, Cuadro: {self.cuadro}, Nro Radios: {self.nro_radios}"
 
 
+
 def guardar_datos_csv(vehiculos):
     try:
+    
         with open("vehiculos.csv", "w", newline="") as archivo:
             archivo_csv = csv.writer(archivo)
             for vehiculo in vehiculos:
-                archivo_csv.writerow([type(vehiculo), vehiculo.__dict__])
+                archivo_csv.writerow([type(vehiculo).__name__, vehiculo.__dict__])
         print("Datos guardados correctamente en vehiculos.csv")
+    except PermissionError:
+        print("Error: No se tienen los permisos necesarios para escribir en el archivo.")
     except Exception as e:
-        print(f"Error al guardar los datos: {e}")
+        print(f"Error inesperado al guardar los datos: {e}")
+
 
 
 def leer_datos_csv():
     vehiculos = []
     try:
+       
         with open("vehiculos.csv", "r") as archivo:
             archivo_csv = csv.reader(archivo)
             for vehiculo in archivo_csv:
-                print(vehiculo)
+                print(vehiculo)  
         print("Datos leídos correctamente de vehiculos.csv")
     except FileNotFoundError:
-        print("El archivo vehiculos.csv no existe.")
+        print("Error: El archivo vehiculos.csv no existe.")
+    except PermissionError:
+        print("Error: No se tienen los permisos necesarios para leer el archivo.")
     except Exception as e:
-        print(f"Error al leer los datos: {e}")
+        print(f"Error inesperado al leer los datos: {e}")
 
 
+# Funciones para cada opción
 def insertar_particular(vehiculos):
     marca = input("Inserte la marca del vehículo: ")
     modelo = input("Inserte el modelo del vehículo: ")
@@ -157,7 +166,7 @@ def menu():
 
         opcion = input("Seleccione una opción: ")
 
-       
+      
         accion = opciones.get(opcion)
         if accion:
             accion()
