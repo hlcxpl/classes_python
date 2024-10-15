@@ -92,7 +92,7 @@ def leer_datos_csv():
         print(f"Error inesperado al leer los datos: {e}")
 
 
-# Funciones para cada opción
+
 def insertar_particular(vehiculos):
     marca = input("Inserte la marca del vehículo: ")
     modelo = input("Inserte el modelo del vehículo: ")
