@@ -1,0 +1,36 @@
+@startuml
+class Vehiculo {
+    +marca: String
+    +modelo: String
+    +nro_ruedas: Int
+}
+
+class Automovil {
+    +velocidad: Int
+    +cilindrada: Int
+}
+
+class Particular {
+    +nro_puestos: Int
+}
+
+class Carga {
+    +carga: Int
+}
+
+class Bicicleta {
+    +tipo: String
+}
+
+class Motocicleta {
+    +motor: String
+    +cuadro: String
+    +nro_radios: Int
+}
+
+Vehiculo <|-- Automovil
+Automovil <|-- Particular
+Automovil <|-- Carga
+Vehiculo <|-- Bicicleta
+Bicicleta <|-- Motocicleta
+@enduml
